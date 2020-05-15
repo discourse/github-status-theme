@@ -27,10 +27,7 @@ export default {
             }/${parts[2]}/${parts[4]}?label=&style=flat-square`;
             const image = document.createElement("img");
             image.setAttribute("src", imageSrc);
-            image.setAttribute(
-              "style",
-              "display: inline-block; float: none; max-width: 100%; max-height: 100%;"
-            );
+            image.classList.add("github-status-indicator");
 
             const info = onebox.querySelector(".github-info");
             info.appendChild(image);
@@ -39,5 +36,5 @@ export default {
         { id: "github-status" }
       );
     });
-  }
+  },
 };
