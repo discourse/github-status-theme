@@ -1,6 +1,6 @@
 import { withPluginApi } from "discourse/lib/plugin-api";
 export default {
-  name: "my-initializer",
+  name: "initialize-github-status",
   initialize() {
     withPluginApi("0.8.7", api => {
       api.decorateCooked(
