@@ -15,7 +15,7 @@ export default {
 
             const href = link.getAttribute("href");
             const parts = href.match(
-              /https:\/\/github\.com\/(\w+)\/(\w+)\/(pull|issues)\/(\d+)/
+              /https:\/\/github\.com\/([\w-]+)\/([\w-]+)\/(pull|issues)\/(\d+)/
             );
             if (!parts) return;
 
