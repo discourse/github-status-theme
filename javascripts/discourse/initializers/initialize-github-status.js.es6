@@ -32,7 +32,7 @@ export default {
               "display: inline-block; float: none; max-width: 100%; max-height: 100%;"
             );
 
-            const info = element.querySelector(".github-info");
+            const info = onebox.querySelector(".github-info");
             info.appendChild(image);
           });
         },
