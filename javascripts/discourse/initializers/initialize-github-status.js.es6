@@ -30,11 +30,13 @@ export default {
             image.classList.add("github-status-indicator");
 
             const info = onebox.querySelector(".github-info");
-            info.appendChild(image);
+            if (info) {
+              info.appendChild(image);
+            }
           });
         },
         { id: "github-status" }
       );
     });
-  },
+  }
 };
