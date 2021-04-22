@@ -2,14 +2,13 @@ import { withPluginApi } from "discourse/lib/plugin-api";
 export default {
   name: "initialize-github-status",
   initialize() {
-    withPluginApi("0.8.7", api => {
-      api.decorateCooked(
-        $elem => {
-          const element = $elem[0];
+    withPluginApi("0.8.7", (api) => {
+      api.decorateCookedElement(
+        (element) => {
           const oneboxes = element.querySelectorAll(
             ".onebox.githubpullrequest, .onebox.githubissue"
           );
-          oneboxes.forEach(onebox => {
+          oneboxes.forEach((onebox) => {
             const link = onebox.querySelector(".source a");
             if (!link) return;
 
@@ -22,11 +21,11 @@ export default {
             let linkType = parts[3];
             if (linkType === "pull") linkType = "pulls";
 
-            const imageSrc = `https://img.shields.io/github/${linkType}/detail/state/${
-              parts[1]
-            }/${parts[2]}/${parts[4]}?label=&style=flat-square`;
+            const imageSrc = `https://img.shields.io/github/${linkType}/detail/state/${parts[1]}/${parts[2]}/${parts[4]}?label=&style=flat-square`;
             const image = document.createElement("img");
             image.setAttribute("src", imageSrc);
+            image.width = "37";
+            image.height = "20";
             image.classList.add("github-status-indicator");
 
             const info = onebox.querySelector(".github-info");
@@ -38,5 +37,5 @@ export default {
         { id: "github-status" }
       );
     });
-  }
+  },
 };
