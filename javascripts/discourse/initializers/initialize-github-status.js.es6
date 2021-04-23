@@ -24,8 +24,6 @@ export default {
             const imageSrc = `https://img.shields.io/github/${linkType}/detail/state/${parts[1]}/${parts[2]}/${parts[4]}?label=&style=flat-square`;
             const image = document.createElement("img");
             image.setAttribute("src", imageSrc);
-            image.width = "37";
-            image.height = "20";
             image.classList.add("github-status-indicator");
 
             const info = onebox.querySelector(".github-info");
