@@ -1,0 +1,10 @@
+{
+  "name": "github-status-theme",
+  "version": "1.0.0",
+  "repository": "https://github.com/discourse/github-status-theme",
+  "author": "Discourse",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint-config-discourse": "^3.2.0"
+  }
+}
