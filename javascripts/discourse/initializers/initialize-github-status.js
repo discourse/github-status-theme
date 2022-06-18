@@ -19,16 +19,22 @@ export default {
     );
     oneboxes.forEach((onebox) => {
       const link = onebox.querySelector(".source a");
-      if (!link) {return;}
+      if (!link) {
+        return;
+      }
 
       const href = link.getAttribute("href");
       const parts = href.match(
         /https:\/\/github\.com\/([\w-]+)\/([\w-]+)\/(pull|issues)\/(\d+)/
       );
-      if (!parts) {return;}
+      if (!parts) {
+        return;
+      }
 
       let linkType = parts[3];
-      if (linkType === "pull") {linkType = "pulls";}
+      if (linkType === "pull") {
+        linkType = "pulls";
+      }
 
       const imageSrc = `https://img.shields.io/github/${linkType}/detail/state/${parts[1]}/${parts[2]}/${parts[4]}?label=&style=flat-square`;
       const image = document.createElement("img");
