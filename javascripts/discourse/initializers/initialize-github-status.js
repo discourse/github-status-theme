@@ -23,6 +23,13 @@ export default {
         return;
       }
 
+      const isPrivate =
+        onebox.querySelector(".onebox-body .github-row")?.dataset
+          .githubPrivateRepo === "true";
+      if (isPrivate) {
+        return;
+      }
+
       const href = link.getAttribute("href");
       const parts = href.match(
         /https:\/\/github\.com\/([\w-]+)\/([\w-]+)\/(pull|issues)\/(\d+)/
