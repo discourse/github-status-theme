@@ -1,4 +1,5 @@
 import { withPluginApi } from "discourse/lib/plugin-api";
+
 export default {
   name: "initialize-github-status",
   initialize() {
