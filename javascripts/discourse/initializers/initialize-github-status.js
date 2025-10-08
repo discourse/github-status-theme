@@ -3,7 +3,7 @@ import { withPluginApi } from "discourse/lib/plugin-api";
 export default {
   name: "initialize-github-status",
   initialize() {
-    withPluginApi("0.8.7", (api) => {
+    withPluginApi((api) => {
       api.decorateCookedElement(this.addStatusIndicators, {
         id: "github-status",
       });
